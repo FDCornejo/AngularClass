@@ -1,0 +1,27 @@
+<mat-grid-list cols="1" rowHeight="2:1">
+    <mat-grid-tile>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Please Log in</mat-card-title>
+
+            </mat-card-header>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="example-container">
+                    <mat-form-field>
+                        <input  type="email" formControlName="email" id="email"  matInput placeholder="Email">
+                    </mat-form-field>
+                    <mat-form-field>
+                            <input  type="password" formControlName="password" id="email"  matInput placeholder="Password">
+
+                    </mat-form-field>
+                    <button type="submit" mat-button color="primary">Log In</button>
+
+                </div>
+            </form>
+        </mat-card>
+
+
+    </mat-grid-tile>
+
+</mat-grid-list>

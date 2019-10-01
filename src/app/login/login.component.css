@@ -1,0 +1,15 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  .example-header-image {
+    background-image: url('https://randomuser.me/api/portraits/men/52.jpg');
+    background-size: cover;
+  }
+  .example-card {
+    min-width: 600px;
+  }
