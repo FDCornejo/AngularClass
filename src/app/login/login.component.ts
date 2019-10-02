@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      // do call here
       this.color_valid = true;
       const loginObject: Login = {
         email: this.loginForm.get("email").value,
@@ -40,11 +39,10 @@ export class LoginComponent implements OnInit {
       this._userService.login(loginObject).subscribe(response => {
         console.log(response);
         this._tokenService.setActiveToken(response.token);
-        this._router.navigateByUrl("user");
+        this._router.navigateByUrl("app");
       });
     } else {
       this.color_valid = false;
-      // show some error.
     }
   }
 

@@ -4,5 +4,8 @@
     <!-- This fills the remaining space of the current row -->
     <span class="example-fill-remaining-space"></span>
    
-    <button  routerLink="/app/add" mat-button>Add</button>
+    <button  routerLink="/app/add" color="accent" mat-raised-button>Add New User</button>
+    <button (click)="singOut()" mat-raised-button color="warn">
+            <mat-icon>cancel_presentation</mat-icon>
+    </button>
 </mat-toolbar>

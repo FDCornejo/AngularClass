@@ -1,2 +1,20 @@
-
-<p>users works!</p>
+<mat-grid-list cols="3" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let l of listUsers">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    {{l.first_name}}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    {{l.last_name}}
+                </mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{l.avatar}}" alt="Photo of a Shiba Inu">
+            <mat-card-actions>
+                <button (click)="openSnackBar(l.email)" color="primary" mat-fab >
+                        <mat-icon>email</mat-icon>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

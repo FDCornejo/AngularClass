@@ -1,1 +1,25 @@
-<p>example works!</p>
+<mat-grid-list cols="1" rowHeight="2:1">
+        <mat-grid-tile>
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title>Add new user</mat-card-title>
+    
+                </mat-card-header>
+                <form  [formGroup]="addForm" (ngSubmit)="onSubmit()">
+                    <div class="example-container">
+                        <mat-form-field>
+                            <input   formControlName="name" type="text"id="name"  matInput placeholder="Name">
+                        </mat-form-field>
+                        <mat-form-field>
+                                <input    formControlName="lastname"   type="text" id="password"  matInput placeholder="Lastname">
+                        </mat-form-field>
+                        <button type="submit" mat-button color="primary">Create</button>
+    
+                    </div>
+                </form>
+            </mat-card>
+    
+    
+        </mat-grid-tile>
+    
+    </mat-grid-list>

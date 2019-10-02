@@ -4,21 +4,17 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TaskbarComponent } from './taskbar/taskbar.component';
-
-
+import { LoginComponent } from './login/login.component';
+import { IndexComponent } from './home/index/index.component';
+import { UsersComponent } from './home/users/users.component';
+import { ExampleComponent } from './home/example/example.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-import { RouterModule, Routes } from '@angular/router';
-
 //Material Imports
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import { LoginComponent } from './login/login.component';
-import { IndexComponent } from './home/index/index.component';
-import { UsersComponent } from './home/users/users.component';
-import { ExampleComponent } from './home/example/example.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -26,20 +22,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material';
 
-const appRoutes: Routes = [
-
-  { path: '', component: LoginComponent },
-  { path: 'app', component: IndexComponent,
-  children:[
-    { path: '', component: UsersComponent },
-    { path: 'add', component: ExampleComponent },
-
-  ]
-
-
-},
-
-];
+import { MatSnackBarModule,} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -51,10 +34,8 @@ const appRoutes: Routes = [
     ExampleComponent
   ],
   imports: [
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    ),
+    HttpClientModule,
+    MatSnackBarModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -69,7 +50,7 @@ const appRoutes: Routes = [
     MatInputModule,
     MatSelectModule,
     FormsModule,
-        ReactiveFormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
